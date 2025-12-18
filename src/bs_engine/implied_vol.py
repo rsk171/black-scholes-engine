@@ -1,4 +1,4 @@
-from bs import call_price
+from bs_engine.bs import call_price
 
 def implied_vol_call(
     market_price: float,

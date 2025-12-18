@@ -1,5 +1,5 @@
-from bs import d1
-from utils import normal_cdf
+from bs_engine.bs import d1
+from bs_engine.utils import normal_cdf
 
 def call_delta(S, K, T, r, sigma):
     """

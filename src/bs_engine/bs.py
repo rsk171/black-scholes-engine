@@ -1,5 +1,5 @@
 import math
-from utils import normal_cdf
+from bs_engine.utils import normal_cdf
 
 def d1(S, K, T, r, sigma):
     return (math.log(S/K) + (r + 0.5*sigma**2) * T)/(sigma * math.sqrt(T))

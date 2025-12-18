@@ -1,11 +1,9 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
-
-from bs import call_price
-from implied_vol import implied_vol_call
-from greeks import call_delta
+from bs_engine.bs import call_price
+from bs_engine.implied_vol import implied_vol_call
+from bs_engine.greeks import call_delta
 
 S = 26000
 K = 26400
