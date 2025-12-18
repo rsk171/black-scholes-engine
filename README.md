@@ -21,19 +21,18 @@ implementation, rather than treating formulas as black boxes.
 
 ## Project Structure
 
-```text
-black-scholes-engine/
-├── src/
-│   └── bs_engine/
-│       ├── bs.py           # Black–Scholes pricing
-│       ├── implied_vol.py  # Implied volatility solver
-│       ├── greeks.py       # Option Greeks (delta)
-│       └── utils.py        # Mathematical utilities
-├── examples/
-│   └── nifty_example.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+    black-scholes-engine/
+    ├── src/
+    │   └── bs_engine/
+    │       ├── bs.py
+    │       ├── implied_vol.py
+    │       ├── greeks.py
+    │       └── utils.py
+    ├── examples/
+    │   └── nifty_example.py
+    ├── requirements.txt
+    ├── .gitignore
+    └── README.md
 
 ---
 
@@ -41,7 +40,7 @@ black-scholes-engine/
 
 A European call option payoff at expiry is:
 
-max(S_T - K, 0)
+    max(S_T - K, 0)
 
 When the option is in-the-money, the payoff can be viewed as:
 - receiving the underlying price S_T
@@ -54,7 +53,7 @@ The Black–Scholes model prices the option by:
 
 This leads to the closed-form solution:
 
-Call Price = S · N(d1) − K · e^(−rT) · N(d2)
+    Call Price = S · N(d1) − K · e^(−rT) · N(d2)
 
 This project implements this logic step by step in code.
 
@@ -64,23 +63,23 @@ This project implements this logic step by step in code.
 
 Step 1: Create and activate virtual environment
 
-python -m venv venv  
-venv\Scripts\activate  
+    python -m venv venv
+    venv\Scripts\activate
 
 Step 2: Install dependencies
 
-pip install -r requirements.txt  
+    pip install -r requirements.txt
 
 Step 3: Run example
 
-set PYTHONPATH=src  
-python examples\nifty_example.py  
+    set PYTHONPATH=src
+    python examples\nifty_example.py
 
 Example output:
 
-Call option price: 196.26  
-Recovered implied vol: 0.2000  
-Call delta: 0.32  
+    Call option price: 196.26
+    Recovered implied vol: 0.2000
+    Call delta: 0.32
 
 ---
 
