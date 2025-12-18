@@ -21,13 +21,14 @@ implementation, rather than treating formulas as black boxes.
 
 ## Project Structure
 
+```text
 black-scholes-engine/
 ├── src/
 │   └── bs_engine/
-│       ├── bs.py
-│       ├── implied_vol.py
-│       ├── greeks.py
-│       └── utils.py
+│       ├── bs.py           # Black–Scholes pricing
+│       ├── implied_vol.py  # Implied volatility solver
+│       ├── greeks.py       # Option Greeks (delta)
+│       └── utils.py        # Mathematical utilities
 ├── examples/
 │   └── nifty_example.py
 ├── requirements.txt
