@@ -1,0 +1,23 @@
+{
+  "records": {
+    "underlyingValue": 26000,
+    "data": [
+      {
+        "strikePrice": 25800,
+        "CE": { "lastPrice": 260, "expiryDate": "26-Dec-2024" }
+      },
+      {
+        "strikePrice": 26000,
+        "CE": { "lastPrice": 180, "expiryDate": "26-Dec-2024" }
+      },
+      {
+        "strikePrice": 26200,
+        "CE": { "lastPrice": 120, "expiryDate": "26-Dec-2024" }
+      },
+      {
+        "strikePrice": 26400,
+        "CE": { "lastPrice": 80, "expiryDate": "26-Dec-2024" }
+      }
+    ]
+  }
+}
