@@ -3,7 +3,7 @@ import os
 
 from bs_engine.bs import call_price
 from bs_engine.implied_vol import implied_vol_call
-from bs_engine.greeks import call_delta
+from bs_engine.greeks import call_delta, call_gamma, call_theta
 
 S = 26000
 K = 26400
@@ -21,3 +21,9 @@ print("Recovered implied vol:", round(iv, 4))
 
 delta = call_delta(S, K, T, r, true_sigma)
 print("Call delta:", round(delta, 4))
+
+gamma = call_gamma(S, K, T, r, true_sigma)
+theta = call_theta(S, K, T, r, true_sigma)
+
+print("Call gamma:", round(gamma, 6))
+print("Call theta (per day):", round(theta, 4))
