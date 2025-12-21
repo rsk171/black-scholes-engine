@@ -17,7 +17,7 @@ def main():
         print("Live NSE blocked, using sample data")
         data = load_sample_data()
 
-    spot, options = parse_nifty_data(data)
+    spot, _, options = parse_nifty_data(data)
 
     r = 0.06
     T = 7 / 365

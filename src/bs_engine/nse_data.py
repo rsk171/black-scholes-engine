@@ -61,4 +61,5 @@ def parse_nifty_data(data):
                 "expiry": ce.get("expiryDate"),
             })
 
-    return spot_price, options
+    futures_price = spot_price  # fallback: treating spot as futures
+    return spot_price, futures_price, options
