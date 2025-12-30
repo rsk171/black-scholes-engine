@@ -15,3 +15,12 @@ def call_price(S, K, T, r, sigma):
     D2 = d2(S, K, T, r, sigma)
 
     return S * normal_cdf(D1) - K * math.exp(-r * T) * normal_cdf(D2)
+
+def put_price(S, K, T, r, sigma):
+    """
+    Black-Scholes put option price
+    """
+    D1 = d1(S, K, T, r, sigma)
+    D2 = d2(S, K, T, r, sigma)
+
+    return K * math.exp(-r * T) * normal_cdf(-D2) - S * normal_cdf(-D1)

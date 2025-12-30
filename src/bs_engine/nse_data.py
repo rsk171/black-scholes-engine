@@ -2,7 +2,7 @@ import time
 import requests
 
 
-NSE_OPTION_CHAIN_URL = "https://www.nseindia.com/api/option-chain-v3?type=Indices&symbol=NIFTY&expiry=30-Dec-2025"
+NSE_OPTION_CHAIN_URL = "https://www.nseindia.com/api/option-chain-v3?type=Indices&symbol=NIFTY&expiry=27-Jan-2026"
 NSE_HOME_URL = "https://www.nseindia.com"
 
 
