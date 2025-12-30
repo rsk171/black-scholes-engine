@@ -150,7 +150,7 @@ This reflects real market behavior where:
 
 The volatility skew extracted using Black-76 is visualized below.
 
-![Volatility Skew (Black-76)](Figure%201.png)
+![Volatility Skew (Black-76)](Figure_1.png)
 
 ---
 
