@@ -1,4 +1,8 @@
+import csv
+import os
 import json
+import matplotlib.pyplot as plt
+
 from bs_engine.nse_data import get_nifty_option_chain, parse_nifty_data
 from bs_engine.implied_vol import implied_vol_call_black76
 
@@ -18,7 +22,11 @@ def main():
     spot, futures_price, options = parse_nifty_data(data)
 
     r = 0.06
-    T = 7/365 # same
+    T = 7/365
+
+    strikes = []
+    ivs = []
+    prices = []
 
     print("NIFTY Spot:", spot)
     print("NIFTY Futures:", futures_price)
@@ -38,9 +46,37 @@ def main():
                 T = T,
                 r = r,
             )
+
+            strikes.append(K)
+            prices.append(price)
+            ivs.append(iv)
+
             print(f"{K:6} | {price: 13.2f} | {iv:.4f}")
         except Exception:
             print(f"{K:6} | {price: 13.2f} | IV error")
+
+    # ---- Plotting layer ----
+    if strikes:
+        plt.figure(figsize=(9, 5))
+        plt.plot(strikes, ivs, marker = "o")
+        plt.xlabel("Strike")
+        plt.ylabel("Implied Volatility")
+        plt.title("NIFTY Volatility Skew (Black-76)")
+        plt.grid(True)
+        plt.show()
+
+    # ---- CSV export ----
+    os.makedirs("data/derived", exist_ok=True)
+    csv_path = "data/derived/nifty_volatility_skew_black76.csv"
+
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["strike", "market_price", "implied_vol"])
+
+        for K, price, iv in zip(strikes, prices, ivs):
+            writer.writerow([K, price, iv])
+
+    print(f"\nVolatility skew exported to {csv_path}")
 
 if __name__ == "__main__":
     main()
